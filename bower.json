@@ -1,0 +1,33 @@
+{
+  "name": "danielgoncalves_website",
+  "homepage": "https://github.com/danielalmeidagoncalves/danielgoncalves_website",
+  "authors": [
+    "Daniel Gonçalves <daniel.deeds@gmail.com>"
+  ],
+  "description": "daniel goncalves website",
+  "main": "",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "daniel",
+    "goncalves",
+    "website"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "static/vendors",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.0",
+    "requirejs": "^2.1.22",
+    "almond": "^0.3.1",
+    "jsx-requirejs-plugin": "^0.6.2"
+  }
+}
