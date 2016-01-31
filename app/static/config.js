@@ -7,7 +7,13 @@ requirejs.config({
     react: "vendors/react/react-with-addons",
     reactdom: "vendors/react/react-dom",
     text: "vendors/requirejs-text/text",
-    semantic: "vendors/semantic/dist/semantic.min"
+    semantic: "vendors/semantic/dist/semantic"
+  },
+  shim: {
+	  'semantic': {
+		  exports: 'semantic',
+		  deps: ['jquery']
+	  }
   },
   jsx: {
     fileExtension: ".jsx"

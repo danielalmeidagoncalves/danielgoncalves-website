@@ -3,12 +3,13 @@
 <head>
   <meta charset="utf-8">
   <title>Demo</title>
+  <link rel="stylesheet" type="text/css" class="ui" href="{{ url_for("static", filename="vendors/semantic/dist/semantic.min.css") }}">
+    <link rel="stylesheet" type="text/css" class="ui" href="{{ url_for("static", filename="styles/global.css") }}">
 </head>
 <body>
-  <h1>Demo</h1>
-
-  <script src="{{ url_for("static", filename="vendors/requirejs/require.js") }}"></script>
-  <script src="{{ url_for("static", filename="jsx/config.js") }}"></script>
-  <script src="{{ url_for("static", filename="jsx/app.js") }}"></script>
+  <section id="app"></section>
+<script src="{{ url_for("static", filename="vendors/requirejs/require.js") }}"></script>
+<script src="{{ url_for("static", filename="config.js") }}"></script>
+<script src="{{ url_for("static", filename="app.js") }}"></script>
 </body>
 </html>

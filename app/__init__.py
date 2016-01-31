@@ -1,11 +1,15 @@
 from flask import Flask, render_template
+from app import utils, nocache
 
 app = Flask(__name__)
 debug = True
 
+
 @app.route('/')
+@nocache
 def index():
     return render_template('index.html')
+
 
 # Sample HTTP error handling
 @app.errorhandler(404)
