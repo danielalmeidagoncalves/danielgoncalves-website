@@ -1,5 +1,5 @@
-requirejs(["jquery", "react", "jsx"], function($, React, Main) {
+requirejs(["jquery", "react","reactdom","jsx!main"], function($, React,ReactDOM, Main) {
   $(function() {
-    React.render(React.createElement(Main, null), document.body);
+    ReactDOM.render(React.createElement(Main, null), document.body);
   });
 });
