@@ -1,11 +1,13 @@
-from flask import make_response
+from flask import make_response, current_app
 from functools import wraps, update_wrapper
 from datetime import datetime
-
+from logging.handlers import RotatingFileHandler
+from zenlog import log
 
 def nocache(view):
     @wraps(view)
     def no_cache(*args, **kwargs):
+        log.info("Curious users might want to know this")
         response = make_response(view(*args, **kwargs))
         response.headers['Last-Modified'] = datetime.now()
         response.headers['Cache-Control'] = 'no-store, no-cache,'

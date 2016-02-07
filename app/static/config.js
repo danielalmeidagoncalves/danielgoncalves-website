@@ -1,5 +1,6 @@
 requirejs.config({
   baseUrl: "/static",
+  urlArgs: "bust=" + (new Date()).getTime(),
   paths: {
     jquery: "vendors/jquery/dist/jquery",
     jsx: "vendors/jsx-requirejs-plugin/js/jsx",

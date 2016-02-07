@@ -1,5 +1,5 @@
 from flask import Flask, render_template
-from app import utils, nocache
+from app.utils.nocache import nocache
 
 app = Flask(__name__)
 debug = True
