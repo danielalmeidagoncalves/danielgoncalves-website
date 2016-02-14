@@ -1,14 +1,20 @@
 .hidden.menu {
   display: none;
 }
-.ui.vertical.masthead.segment{
+.ui.masthead .text.container {
+  margin-top: 3em;
+  margin-bottom: 0em;
+  font-size: 4em;
+  font-weight: normal;
+}
+.ui.vertical.masthead.segment {
   background: linear-gradient(160deg, #290B36 0%, #043453 100%);
   opacity: 0.9;
 }
-.ui.vertical.masthead.unsplash{
+.ui.vertical.masthead.unsplash {
   position: absolute;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   z-index: -1;
 }
 .masthead.segment {

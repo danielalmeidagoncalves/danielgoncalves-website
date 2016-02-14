@@ -8,17 +8,47 @@ define(function(require, exports, module) {
     render: function() {
       return (
         <div id="app-wrapper">
-          <FollowingMenu></FollowingMenu>
-          <SidebarMenu></SidebarMenu>
+          <FollowingMenu>
+          </FollowingMenu>
+          <SidebarMenu>
+          </SidebarMenu>
           <div className="pusher">
-            <div className="ui content">
-              <MastHead></MastHead>
-              <UnsplashHeader></UnsplashHeader>
+            <div className="ui content top header">
+              <MastHead>
+              </MastHead>
+              <UnsplashHeader>
+              </UnsplashHeader>
+            </div>
+            <div className="ui vertical stripe segment">
+              <div className="ui middle aligned stackable grid container">
+                Quando é que este programa acaba
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+              </div>
             </div>
           </div>
         </div>
-      )
+      );
     }
   });
 
-})
+});

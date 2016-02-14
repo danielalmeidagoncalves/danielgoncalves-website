@@ -12,15 +12,19 @@ define(function(require, exports, module) {
             <a className="item">Careers</a>
             <div className="right menu">
               <div className="item">
-                <a className="ui button">Log in</a>
+                <a className="ui button">
+                  Log in
+                </a>
               </div>
               <div className="item">
-                <a className="ui primary button">Sign Up</a>
+                <a className="ui primary button">
+                  Sign Up
+                </a>
               </div>
             </div>
           </div>
         </div>
-      )
+      );
     }
-  })
-})
+  });
+});
