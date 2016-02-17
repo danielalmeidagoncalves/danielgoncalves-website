@@ -13,8 +13,7 @@ define(function(require, exports, module) {
           <a className="item">Company</a>
           <a className="item">Careers</a>
           <div className="right item">
-            <a className="ui inverted button">Log in</a>
-            <a className="ui inverted button">Sign Up</a>
+        
           </div>
         </div>
       )

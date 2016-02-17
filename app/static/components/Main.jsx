@@ -4,7 +4,23 @@ define(function(require, exports, module) {
   var SidebarMenu = require("jsx!components/menu/SidebarMenu");
   var MastHead = require("jsx!components/header/MastHead");
   var UnsplashHeader = require("jsx!components/header/UnsplashHeader");
+  var SharesWrapper = require("jsx!components/content/SharesWrapper");
+  var Contact = require("jsx!components/footer/Contact");
   module.exports = React.createClass({
+    componentDidMount: function() {
+      // fix menu when passed
+      $(this.refs.header).visibility({
+        once: false,
+        onBottomPassed: function() {
+          $("body").prepend($('.fixed.menu').clone());
+          $('.fixed.menu').transition('fade in');
+        },
+        onBottomPassedReverse: function() {
+          $("body").find(".fixed.menu:first").remove();
+          $('.fixed.menu').transition('fade out');
+        }
+      });
+    },
     render: function() {
       return (
         <div id="app-wrapper">
@@ -13,7 +29,9 @@ define(function(require, exports, module) {
           <SidebarMenu>
           </SidebarMenu>
           <div className="pusher">
-            <div className="ui content top header">
+            <div
+              ref="header"
+              className="ui content top header">
               <MastHead>
               </MastHead>
               <UnsplashHeader>
@@ -21,29 +39,13 @@ define(function(require, exports, module) {
             </div>
             <div className="ui vertical stripe segment">
               <div className="ui middle aligned stackable grid container">
-                Quando é que este programa acaba
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
-                <br/>
+                <SharesWrapper>
+                </SharesWrapper>
               </div>
+            </div>
+            <div className="ui inverted vertical footer segment">
+              <Contact>
+              </Contact>
             </div>
           </div>
         </div>

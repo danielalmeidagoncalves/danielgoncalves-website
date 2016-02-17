@@ -5,19 +5,6 @@ define(function(require, exports, module) {
       return {};
     },
     componentDidMount: function() {
-
-      // fix menu when passed
-    $('.top.header').visibility({
-        once: false,
-        onBottomPassed: function() {
-
-          $('.fixed.menu').transition('fade in');
-        },
-        onBottomPassedReverse: function() {
-
-          $('.fixed.menu').transition('fade out');
-        }
-      });
       var me = $(this.refs.me);
       $(me[0]).on("mouseenter",function(){
           $(this).shape("flip back");
