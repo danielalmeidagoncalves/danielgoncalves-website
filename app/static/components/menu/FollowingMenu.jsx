@@ -7,11 +7,12 @@ define(function(require, exports, module) {
         <div className="ui large top fixed hidden menu">
           <div className="ui container">
             <a className="active item">Home</a>
-            <a className="item">Work</a>
-            <a className="item">Company</a>
-            <a className="item">Careers</a>
+            <a className="item">
+              Lastest Shares
+            </a>
+            <a className="item">Contact</a>
             <div className="right menu">
-            
+
             </div>
           </div>
         </div>

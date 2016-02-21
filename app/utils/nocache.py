@@ -4,6 +4,7 @@ from datetime import datetime
 from logging.handlers import RotatingFileHandler
 from zenlog import log
 
+
 def nocache(view):
     @wraps(view)
     def no_cache(*args, **kwargs):

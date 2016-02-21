@@ -41,7 +41,7 @@ define(function(require, exports, module) {
           className="ui vertical masthead center aligned unsplash transition hidden">
           <img
             width={this.state.windowWidth}
-            src={this.state.srcImage}/>
+            src={this.state.srcImage} />
         </div>
       );
     }
