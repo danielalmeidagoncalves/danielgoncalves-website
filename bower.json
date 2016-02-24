@@ -28,6 +28,7 @@
     "jquery": "^2.2.0",
     "requirejs": "^2.1.22",
     "almond": "^0.3.1",
-    "jsx-requirejs-plugin": "^0.6.2"
+    "jsx-requirejs-plugin": "^0.6.2",
+    "jed": "^1.1.0"
   }
 }

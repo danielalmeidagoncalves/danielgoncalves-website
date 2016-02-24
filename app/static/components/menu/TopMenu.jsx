@@ -1,8 +1,5 @@
 define(function(require, exports, module) {
   var React = require("react");
-  var ReactIntl = require('reactint');
-  //var IntlMixin       = ReactIntl.IntlMixin;
-  //var FormattedNumber = ReactIntl.FormattedNumber;
 
   module.exports = React.createClass({
     componentDidMount: function() {
@@ -30,7 +27,7 @@ define(function(require, exports, module) {
           </div>
         </div>
       </div>
-    )
+    );
   }
-})
-})
+});
+});
