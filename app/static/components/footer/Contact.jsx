@@ -1,5 +1,6 @@
 define(function(require, exports, module) {
   var React = require("react");
+  var i18n = require("i18n");
   module.exports = React.createClass({
     componentDidMount: function() {
       $(this.refs.close)
@@ -26,7 +27,7 @@ define(function(require, exports, module) {
                     <i className="close icon" ref="close">
                     </i>
                     <div className="header">
-                      No need to find wally to contact me :) just send a message
+                      {i18n.gettext("No need to find wally to contact me :) just send a message")}
                     </div>
                   </div>
                 </div>
@@ -51,7 +52,7 @@ define(function(require, exports, module) {
                 <div className="field">
                   <div className="ui tall stacked segment">
                     <a className="ui red ribbon label">
-                      Let the words fly!
+                        {i18n.gettext("Let the words fly!")}
                     </a>
                     <textarea>
                     </textarea>
@@ -63,10 +64,10 @@ define(function(require, exports, module) {
                       className="ui fluid positive animated fade button"
                       tabIndex="0">
                       <div className="visible content">
-                        Say Hello
+                        {i18n.gettext("Say Hello")}
                       </div>
                       <div className="hidden content">
-                        Send
+                        {i18n.gettext("Send")}
                       </div>
                     </div>
                   </div>

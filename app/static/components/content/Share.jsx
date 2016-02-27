@@ -1,5 +1,6 @@
 define(function(require, exports, module) {
   var React = require("react");
+  var i18n = require("i18n");
   module.exports = React.createClass({
     componentDidMount: function() {
       $('.fluid.card .image').dimmer({
@@ -15,6 +16,7 @@ define(function(require, exports, module) {
                 <div className="content">
                   <div className="center">
                     <div className="ui inverted button">
+                        {i18n.gettext("Read More")}
                       Read More
                     </div>
                   </div>
@@ -42,7 +44,7 @@ define(function(require, exports, module) {
               <span className="left floated like">
                 <i className="comments icon">
                 </i>
-                Comments
+                  {i18n.gettext("Comments")}
               </span>
               <div className="right floated author">
                 <img

@@ -1,6 +1,6 @@
 define(function(require, exports, module) {
   var React = require("react");
-
+  var i18n = require("i18n");
   module.exports = React.createClass({
     componentDidMount: function() {
       $(this.refs.languagetop).dropdown();
@@ -12,22 +12,16 @@ define(function(require, exports, module) {
             <i className="sidebar icon">
             </i>
           </a>
-          <a className="active item">Home</a>
+          <a className="active item">{i18n.gettext("Home")}</a>
           <a className="item">
-            Latest Shares
+            {i18n.gettext("Latest Shares")}
           </a>
-          <a className="item">Contact</a>
+          <a className="item">{i18n.gettext("Contacts")}</a>
           <div className="right item">
-            <div className="ui dropdown item" ref="languagetop">
-              Language <i className="dropdown icon"></i>
-            <div className="menu">
-              <a className="item"><i className="us flag"></i> English</a>
-              <a className="item"><i className="pt flag"></i> Portuguese</a>
-            </div>
+
           </div>
         </div>
-      </div>
-    );
-  }
-});
+      );
+    }
+  });
 });

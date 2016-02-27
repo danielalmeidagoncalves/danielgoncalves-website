@@ -2,6 +2,9 @@ define(function(require, exports, module) {
   var React = require("react");
   var TopMenu = require("jsx!components/menu/TopMenu");
   var HeadCard = require("jsx!components/header/HeadCard");
+  var i18n = require("i18n");
+  //var I18ner = require("jsx!components/i18n/I18ner");
+
   module.exports = React.createClass({
     componentDidMount: function() {
 
@@ -20,7 +23,7 @@ define(function(require, exports, module) {
           </div>
 
         <h2 className="ui center aligned header">
-            Somewhat a try to make something different
+          {i18n.gettext( "Somewhat a try to make something different" )}
         </h2>
         </div>
       );
