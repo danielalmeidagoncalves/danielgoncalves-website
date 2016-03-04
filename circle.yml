@@ -1,0 +1,6 @@
+dependencies:
+  pre:
+    - pip install -r require_dev.txt
+test:
+  override:
+    - python run.py

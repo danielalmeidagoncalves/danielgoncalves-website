@@ -5,8 +5,4 @@ install:
 - npm install -g bower -g less
 - bower install
 - pip install -r require_dev.txt
-deploy:
-  provider: script
-  script: python run.py
-  on:
-    branch: master
+deploy: python run.py
