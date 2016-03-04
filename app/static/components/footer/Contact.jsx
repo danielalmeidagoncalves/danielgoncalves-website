@@ -13,7 +13,7 @@ define(function(require, exports, module) {
     },
     render: function() {
       return (
-        <div className="ui container">
+        <div id="contacts" className="ui container">
           <div className="ui stackable inverted divided equal height stackable grid">
             <div className="eight wide column">
               <img

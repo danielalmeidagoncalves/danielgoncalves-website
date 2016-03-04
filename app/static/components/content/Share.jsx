@@ -17,7 +17,6 @@ define(function(require, exports, module) {
                   <div className="center">
                     <div className="ui inverted button">
                         {i18n.gettext("Read More")}
-                      Read More
                     </div>
                   </div>
                 </div>

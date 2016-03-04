@@ -8,7 +8,7 @@ define(function(require, exports, module) {
     },
     render: function() {
       return (
-        <div className="ui three column grid">
+        <div id="latest-shares" className="ui three column grid">
           <Share>
           </Share>
           <Share>

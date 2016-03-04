@@ -1,21 +1,11 @@
 from flask import Flask, render_template
 from app.utils.nocache import nocache
-
+from .views.general import general
+from .views.shares import shares
 app = Flask(__name__)
 debug = True
-
-
-@app.route('/')
-@nocache
-def index():
-    return render_template('index.html')
-
-
-# Sample HTTP error handling
-@app.errorhandler(404)
-def not_found(error):
-    return render_template('404.html'), 404
-
+app.register_blueprint(general)
+app.register_blueprint(shares)
 if __name__ == '__main__':
     app.debug = debug
     app.run()
