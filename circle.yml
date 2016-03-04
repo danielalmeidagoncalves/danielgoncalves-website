@@ -1,3 +1,8 @@
+machine:
+  python:
+    version: 2.7.6
+  pre:	
+    - sudo pip install virtualenv
 dependencies:
   pre:
     - pip install -r require_dev.txt
