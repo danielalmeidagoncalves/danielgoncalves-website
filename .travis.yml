@@ -5,4 +5,4 @@ install:
 - npm install -g bower -g less
 - bower install
 - pip install -r require_dev.txt
-deploy: python run.py
+script: python run.py
