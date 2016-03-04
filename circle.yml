@@ -1,11 +1,11 @@
 machine:
-  python:
-    version: 2.7.6
+ python:
+  version: 2.7.6
   pre:	
-    - sudo pip install virtualenv
+   - sudo pip install virtualenv
 dependencies:
-  pre:
-    - pip install -r require_dev.txt
+ pre:
+  - pip install -r require_dev.txt
 test:
-  override:
-    - python run.py
+ override:
+  - python run.py
