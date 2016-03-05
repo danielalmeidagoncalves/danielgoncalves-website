@@ -8,4 +8,4 @@ dependencies:
   - pip install -r require_dev.txt
 test:
  post:
-  - python run.py
+  - python sanity_test.py

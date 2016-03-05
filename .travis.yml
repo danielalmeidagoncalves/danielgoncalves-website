@@ -5,5 +5,5 @@ install:
 - npm install -g bower -g less
 - bower install
 - pip install -r require_dev.txt
-script: 
-- python run.py
+script:
+- python sanity_test.py

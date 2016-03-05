@@ -8,7 +8,7 @@ from zenlog import log
 def nocache(view):
     @wraps(view)
     def no_cache(*args, **kwargs):
-        log.info("Curious users might want to know this")
+        #log.info("Curious users might want to know this")
         response = make_response(view(*args, **kwargs))
         response.headers['Last-Modified'] = datetime.now()
         response.headers['Cache-Control'] = 'no-store, no-cache,'
