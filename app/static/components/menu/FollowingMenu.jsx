@@ -4,17 +4,18 @@ define(function(require, exports, module) {
 
   module.exports = React.createClass({
     componentDidMount: function() {
-      $('a.menu').bind('click', function(event) {
+      $('.following.menu a').bind('click', function(event) {
+        debugger;
         var $anchor = $(this);
         $('html, body').stop().animate({
           scrollTop: $($anchor.attr('href')).offset().top
-        }, 1500, 'easeInOutExpo');
+        }, 1500);
         event.preventDefault();
       });
     },
     render: function() {
       return (
-        <div className="ui large top fixed hidden menu">
+        <div className="ui large top fixed hidden following menu ">
           <div className="ui container">
             <a className="active item" href="#unsplash">
               {i18n.gettext("Home")}

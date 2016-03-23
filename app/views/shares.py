@@ -17,4 +17,4 @@ def getPosts():
     manager = flaskext.couchdb.CouchDBManager()
     manager.setup(app)
     manager.sync(app)
-    return render_template('index.html')
+    return render_template('shares.html')

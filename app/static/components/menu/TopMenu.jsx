@@ -7,7 +7,7 @@ define(function(require, exports, module) {
       this.initMenu();
     },
     initMenu: function() {
-      $('.menu a').bind('click', function(event) {
+      $('.top.menu a:not(.toc)').bind('click', function(event) {
         var $anchor = $(this);
         $('html, body').stop().animate({
           scrollTop: $($anchor.attr('href')).offset().top
@@ -17,7 +17,7 @@ define(function(require, exports, module) {
     },
     render: function() {
       return (
-        <div className="ui large secondary inverted pointing menu">
+        <div className="ui large secondary inverted top pointing menu">
           <a className="toc item">
             <i className="sidebar icon">
             </i>

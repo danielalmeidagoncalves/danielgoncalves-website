@@ -2,10 +2,7 @@ define(function(require, exports, module) {
   var React = require("react");
   var FollowingMenu = require("jsx!components/menu/FollowingMenu");
   var SidebarMenu = require("jsx!components/menu/SidebarMenu");
-  var MastHead = require("jsx!components/header/MastHead");
-  var UnsplashHeader = require("jsx!components/header/UnsplashHeader");
-  var SharesWrapper = require("jsx!components/content/SharesWrapper");
-  var Contact = require("jsx!components/footer/Contact");
+  var TopMenu = require("jsx!components/menu/TopMenu");
   module.exports = React.createClass({
     componentDidMount: function() {
       // fix menu when passed
@@ -20,32 +17,36 @@ define(function(require, exports, module) {
           $('.fixed.menu').transition('fade out');
         }
       });
+
+      var anchor = window.location.hash;
+      if (typeof anchor !== undefined && anchor !== '') {
+        $('html, body').stop().animate({
+          scrollTop: $(anchor).offset().top
+        }, 1500);
+      }
     },
     render: function() {
       return (
         <div id="app-wrapper">
-          <FollowingMenu>
-          </FollowingMenu>
-          <SidebarMenu>
-          </SidebarMenu>
+          <FollowingMenu></FollowingMenu>
+          <SidebarMenu></SidebarMenu>
           <div className="pusher">
-            <div
-              ref="header"
-              className="ui content top header">
-              <MastHead>
-              </MastHead>
-              <UnsplashHeader>
-              </UnsplashHeader>
+            <div ref="header" className="ui content top header">
+              <div className="ui inverted vertical center aligned segment">
+                <div className="ui container">
+                  <TopMenu></TopMenu>
+                </div>
+              </div>
             </div>
             <div className="ui vertical stripe segment">
               <div className="ui middle aligned stackable grid container">
-                <SharesWrapper>
-                </SharesWrapper>
+                    <div className="ui raised very padded text container segment">
+                        <img className="ui fluid image" src="https://source.unsplash.com/random" />
+                    </div>
               </div>
             </div>
             <div className="ui inverted vertical footer segment">
-              <Contact>
-              </Contact>
+              FOOTER
             </div>
           </div>
         </div>

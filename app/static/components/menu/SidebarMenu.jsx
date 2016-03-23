@@ -11,11 +11,11 @@ define(function(require, exports, module) {
       this.initMenu();
     },
     initMenu: function(){
-      $('a.menu').bind('click', function(event) {
+      $('.sidebar.menu a:not(.toc)').bind('click', function(event) {
         var $anchor = $(this);
         $('html, body').stop().animate({
           scrollTop: $($anchor.attr('href')).offset().top
-        }, 1500, 'easeInOutExpo');
+        }, 1500);
         event.preventDefault();
       });
     },
