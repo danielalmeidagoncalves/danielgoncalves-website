@@ -5,7 +5,6 @@ define(function(require, exports, module) {
   module.exports = React.createClass({
     componentDidMount: function() {
       $('.following.menu a').bind('click', function(event) {
-        debugger;
         var $anchor = $(this);
         $('html, body').stop().animate({
           scrollTop: $($anchor.attr('href')).offset().top

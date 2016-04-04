@@ -38,12 +38,21 @@ define(function(require, exports, module) {
                 </div>
               </div>
             </div>
-            <div className="ui vertical stripe segment">
+            <div className="ui vertical stripe gray segment">
               <div className="ui middle aligned stackable grid container">
-                    <div className="ui raised very padded text container segment">
+                    <div className="ui raised very padded text container white segment">
                         <img className="ui fluid image" src="https://source.unsplash.com/random" />
+                        <h1 className="ui header">
+                          Babies with bronchitis and thousands struggling in northern Greece
+                           <div className="sub header">By Dr Michael Kuhnel-Rouchouze…</div>
+                        </h1>
+                        <div className="ui bottom attached basic label">
+                          <i className="comment icon"></i>
+                           Veronika
+                        </div>
                     </div>
               </div>
+
             </div>
             <div className="ui inverted vertical footer segment">
               FOOTER
