@@ -35,7 +35,7 @@ class FlaskTests(unittest.TestCase):
         result = self.app.get('/')
 
         # assert the response data
-        self.assertTrue(result.data.find("app") != -1)
+        self.assertTrue(result.data.find("hello") != -1)
 
         # runs the unit tests in the module
 if __name__ == '__main__':
