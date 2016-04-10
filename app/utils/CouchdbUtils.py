@@ -15,7 +15,7 @@ class CouchdbUtils:
     def get_db(view):
         db = getattr(g, '_database', None)
         if db is None:
-            log.error   ("going for the first time")
+            log.error("going for the first time")
             couch = couchdb.Server(app.config['COUCHDB_SERVER'])
             couch.resource.credentials = (app.config['COUCHDB_USER'], app.config['COUCHDB_PASSWORD'])
             db = g._database = couch[app.config['COUCHDB_DATABASE']]

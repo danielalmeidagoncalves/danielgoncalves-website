@@ -9,7 +9,7 @@ define(function(require, exports, module) {
     getAllShares: function(afterCall){
       fetch('/shares')
       .then(function(response) {
-        //check for status
+        // go on with the data
         return response.json();
       }).then(function(json) {
         // get all the nice things

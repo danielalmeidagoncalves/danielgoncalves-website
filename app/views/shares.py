@@ -4,7 +4,7 @@ from app.utils.nocache import nocache
 import couchdb
 from logging.handlers import RotatingFileHandler
 from zenlog import log
-from  app.utils.CouchdbUtils import CouchdbUtils
+from app.utils.CouchdbUtils import CouchdbUtils
 shares = Blueprint('shares', __name__)
 app = Flask(__name__)
 
@@ -17,7 +17,7 @@ def getPosts():
 
 @shares.route('/shares')
 def getAllShares():
-    db =  CouchdbUtils().get_db()
+    db = CouchdbUtils().get_db()
     map_fun = '''function(doc) {
         emit(doc.type, doc);
     }'''

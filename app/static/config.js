@@ -13,7 +13,9 @@ requirejs.config({
     i18n: "i18n/translation",
     fetch: "vendors/fetch/fetch",
     sharesactions: "actions/SharesActions",
-    moment: "vendors/moment/moment"
+    contactsactions: "actions/ContactsActions",
+    moment: "vendors/moment/moment",
+    showdown: "vendors/showdown/dist/showdown"
   },
   shim: {
 	  'semantic': {
@@ -26,6 +28,9 @@ requirejs.config({
   },
   config: {
         moment: {
+            noGlobal: false
+        },
+        showdown: {
             noGlobal: false
         }
     }

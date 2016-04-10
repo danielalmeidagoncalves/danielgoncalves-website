@@ -1,6 +1,7 @@
 define(function(require, exports, module) {
   var React = require("react");
   var Share = require("jsx!components/content/Share");
+  var MoreShares = require("jsx!components/content/MoreShares");
   var SharesActions = require("sharesactions");
   var latestShares = [];
   module.exports = React.createClass({
@@ -23,10 +24,10 @@ define(function(require, exports, module) {
             <Share key={latestShares[share]._rev}
               data-author={latestShares[share].author}
               data-title={latestShares[share].title}
-              data-body={latestShares[share].body}
+              data-resume={latestShares[share].resume}
               data-slug={latestShares[share].slug}
               data-createdat = {latestShares[share].created_at}
-              data-tags= {latestShares[share].tags.join(",")} >
+              data-tags= {latestShares[share].tags.join(",")}>
             </Share>
           );
         }
@@ -39,6 +40,7 @@ define(function(require, exports, module) {
       return (
         <div id="latest-shares" ref="latestshares" className="ui three column grid">
           {this.renderShares()}
+          <MoreShares></MoreShares>
         </div>
       );
     }

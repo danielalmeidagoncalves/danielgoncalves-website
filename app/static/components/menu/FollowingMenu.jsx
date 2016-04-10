@@ -14,7 +14,7 @@ define(function(require, exports, module) {
     },
     render: function() {
       return (
-        <div className="ui large top fixed hidden following menu ">
+        <div className="ui large top fixed hidden inverted following menu ">
           <div className="ui container">
             <a className="active item" href="#unsplash">
               {i18n.gettext("Home")}

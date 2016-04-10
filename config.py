@@ -6,7 +6,6 @@ import os
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 # Define the database - we are working with
-# SQLite for this example
 DATABASE_CONNECT_OPTIONS = {}
 COUCHDB_SERVER = "http://localhost:5984/"
 COUCHDB_DATABASE = "danielgoncalves"
@@ -27,3 +26,5 @@ CSRF_SESSION_KEY = "secret"
 
 # Secret key for signing cookies
 SECRET_KEY = "secret"
+
+SERVER_NAME = "localhost"

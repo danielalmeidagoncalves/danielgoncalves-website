@@ -2,6 +2,9 @@ define(function(require, exports, module) {
   var React = require("react");
   var i18n = require("i18n");
   module.exports = React.createClass({
+    getInitialState: function() {
+      return {shareState: "umounted"};
+    },
     componentDidMount: function() {
       $('.fluid.card .image').dimmer({on: 'hover'});
     },
@@ -10,16 +13,22 @@ define(function(require, exports, module) {
       return moment(createdAt, "DD-MM-YYYY").fromNow();
     },
     parseTags: function(tags) {
-      debugger;
       return tags.replace(",", " ");
     },
     parseUnsplashTopic: function(tags) {
-      debugger;
       if (tags.length > 0) {
         return "https://source.unsplash.com/" + tags.split(",")[0];
       }
 
-      return "https://source.unsplash.com/" + "random";
+      return "https://source.unsplash.com/random";
+    },
+    parseBodyMarkdown: function(markdown){
+      var showdown  = require('showdown');
+      var converter = new showdown.Converter();
+      return { __html:   converter.makeHtml(markdown) };
+    },
+    parsePostUrl: function(slug){
+      return "/post/" + slug;
     },
     displayName: "Share",
     render: function() {
@@ -30,7 +39,10 @@ define(function(require, exports, module) {
               <div className="ui dimmer">
                 <div className="content">
                   <div className="center">
-                    <div className="ui inverted button" data-action-url='/post/{this.props["data-title"]}'>
+                    <div
+                      className="ui inverted button"
+                      data-action-url={this.parsePostUrl(this.props["data-slug"])}
+                      >
                       {i18n.gettext("Read More")}
                     </div>
                   </div>
@@ -51,18 +63,21 @@ define(function(require, exports, module) {
                 </span>
               </div>
               <div className="description">
-                <p>
-                  Some nice description
+                <p dangerouslySetInnerHTML={this.parseBodyMarkdown(this.props["data-resume"])}>
                 </p>
               </div>
             </div>
             <div className="extra content">
               <span className="left floated like">
-                <i className="comments icon"></i>
+                <i className="comments icon">
+                </i>
                 {i18n.gettext("Comments")}
               </span>
               <div className="right floated author">
-                <img className="ui avatar image" src="/static/imgs/logo_post.png"/> {this.props["data-author"]}
+                <img
+                  className="ui avatar image"
+                  src="/static/imgs/logo_post.png"/>
+                {this.props["data-author"]}
               </div>
             </div>
           </div>
