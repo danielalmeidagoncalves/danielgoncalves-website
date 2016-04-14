@@ -19,7 +19,9 @@ def getPosts():
 def getAllShares():
     db = CouchdbUtils().get_db()
     map_fun = '''function(doc) {
-        emit(doc.type, doc);
+        if(doc.type=="post"){
+            emit(doc.type, doc);
+        }
     }'''
     results = db.query(map_fun)
     docs = []

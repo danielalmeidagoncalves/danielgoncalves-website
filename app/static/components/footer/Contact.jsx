@@ -13,6 +13,8 @@ define(function(require, exports, module) {
         $('.ui.form').form('validate form');
       });
 
+      $('.devicons').popup();
+
       $('.ui.form').form({
         onFailure: function(formErrors, fields) {
           console.log("failure");
@@ -52,10 +54,8 @@ define(function(require, exports, module) {
 
     },
     onPostMessageSuccess: function() {
-      debugger;
-      console.log(Modal);
-      this.refs.modal.setTitle("Success");
-      this.refs.modal.setDescription("Success");
+      this.refs.modal.setTitle(i18n.gettext("Thanks Mate!"));
+      this.refs.modal.setDescription(i18n.gettext("Thank you for the message, hope I can reply to you as soon as I can."));
       $('.ui.basic.modal').modal('show');
     },
     render: function() {
@@ -72,7 +72,7 @@ define(function(require, exports, module) {
                   <div className="ui info message">
                     <i className="close icon" ref="close"></i>
                     <div className="header">
-                      {i18n.gettext("No need to find wally to contact me :) just send a message")}
+                      {i18n.gettext("No need to find wally to contact me :) just send a message, but before prove me that you are a human by hitting 3 times my face befora submit")}
                     </div>
                   </div>
                 </div>
@@ -109,6 +109,29 @@ define(function(require, exports, module) {
                   </div>
                 </div>
               </form>
+            </div>
+          </div>
+          <div className="ui inverted section divider"></div>
+          <div className="ui horizontal inverted small divided link list">
+            <div className="header">
+              <div className="text">
+                <i className="favorite icon"></i>{i18n.gettext("Build with these wonderful tools: ")}
+              </div>
+              <span data-variation="tiny" data-content="Linux" data-position="top center" className="devicons devicons-linux"></span>
+              <span data-variation="tiny" data-content="Python" data-position="top center" className="devicons devicons-python"></span>
+              <span data-variation="tiny" data-content="CSS3" data-position="top center" className="devicons devicons-css3"></span>
+              <span data-variation="tiny" data-content="HTML5" data-position="top center" className="devicons devicons-html5"></span>
+              <span data-variation="tiny" data-content="Javascript" data-position="top center" className="devicons devicons-javascript"></span>
+              <span data-variation="tiny" data-content="RequireJS" data-position="top center" className="devicons devicons-requirejs"></span>
+              <span data-variation="tiny" data-content="SAAS" data-position="top center" className="devicons devicons-sass"></span>
+              <span data-variation="tiny" data-content="Semantic-UI" data-position="top center" className="devicons devicons-sublime"></span>
+              <span data-variation="tiny" data-content="JQuery" data-position="top center" className="devicons devicons-jquery"></span>
+              <span data-variation="tiny" data-content="Atom" data-position="top center" className="devicons devicons-atom"></span>
+              <span data-variation="tiny" data-content="Bower" data-position="top center" className="devicons devicons-bower"></span>
+              <span data-variation="tiny" data-content="Github" data-position="top center" className="devicons devicons-github_alt"></span>
+              <span data-variation="tiny" data-content="Markdown" data-position="top center" className="devicons devicons-markdown"></span>
+              <span data-variation="tiny" data-content="Nginx" data-position="top center" className="devicons devicons-nginx"></span>
+              <span data-variation="tiny" data-content="Travis" data-position="top center" className="devicons devicons-travis"></span>
             </div>
           </div>
         </div>
