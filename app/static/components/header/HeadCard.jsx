@@ -8,6 +8,7 @@ define(function(require, exports, module) {
       var me = $(this.refs.me);
       var side = $(this.refs.side);
       var component = this;
+      var ContactsController = require("contactscontroller");
       $(me[0]).on("mouseenter", function() {
         $(this).shape("flip back");
       }).on("click", function() {
@@ -15,6 +16,7 @@ define(function(require, exports, module) {
           hit: component.state.hit + 1
         });
         if (component.state.hit >= 3) {
+          ContactsController.setCaptchaSatisfied(true);
           $(me[0]).dimmer('show');
         }
       });
@@ -33,10 +35,10 @@ define(function(require, exports, module) {
             </div>
           </div>
           <div className="sides">
-            <div className="ui blurring side active">
+            <div className="ui side active">
               <img className="ui small circular centered image" src="/static/imgs/crazy_site_face.png"/>
             </div>
-            <div className="side" ref="side">
+            <div className="ui side" ref="side">
               <img className="ui small circular centered image" src="/static/imgs/logo.png"/>
             </div>
           </div>

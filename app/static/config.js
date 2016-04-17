@@ -14,6 +14,7 @@ requirejs.config({
     fetch: "vendors/fetch/fetch",
     sharesactions: "actions/SharesActions",
     contactsactions: "actions/ContactsActions",
+    contactscontroller: "controllers/ContactsController",
     moment: "vendors/moment/moment",
     showdown: "vendors/showdown/dist/showdown"
   },

@@ -5,6 +5,7 @@ define(function(require, exports, module) {
   module.exports = React.createClass({
     componentDidMount: function() {
       var postMessageCallback = this.onPostMessageSuccess;
+      var component = this;
       $(this.refs.close).on('click', function() {
         $(this).closest('.message').transition('fade');
       });
@@ -21,7 +22,15 @@ define(function(require, exports, module) {
         },
         onSuccess: function(event, fields) {
           var ContactsActions = require("contactsactions");
-          ContactsActions.postMessage($('.ui.form').form('get value', 'name'), $('.ui.form').form('get value', 'email'), $('.ui.form').form('get value', 'message'), postMessageCallback);
+          var ContactsController = require("contactscontroller");
+          if(ContactsController.getCaptchaSatisfied()){
+              ContactsActions.postMessage($('.ui.form').form('get value', 'name'), $('.ui.form').form('get value', 'email'), $('.ui.form').form('get value', 'message'), postMessageCallback);
+
+          } else {
+            component.refs.modal.setTitle(i18n.gettext("Prove that you are not a machine like a vacuum cleaner."));
+            component.refs.modal.setDescription(i18n.gettext("You must first hit 3 times (you may hit much more times if you wish :) ) before sending a message."));
+            $('.ui.basic.modal').modal('show');
+          }
         },
         inline: true,
         fields: {
@@ -72,7 +81,7 @@ define(function(require, exports, module) {
                   <div className="ui info message">
                     <i className="close icon" ref="close"></i>
                     <div className="header">
-                      {i18n.gettext("No need to find wally to contact me :) just send a message, but before prove me that you are a human by hitting 3 times my face befora submit")}
+                      {i18n.gettext("No need to find wally to contact me :) just send a message, but before prove me that you are a human by hitting 3 times my face befor submit")}
                     </div>
                   </div>
                 </div>
