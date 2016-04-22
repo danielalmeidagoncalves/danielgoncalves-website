@@ -9,7 +9,7 @@ define(function(require, exports, module) {
       return {wrapperStates: "umounted"};
     },
     componentWillMount: function() {
-      SharesActions.getAllShares(this.afterGetShares);
+      SharesActions.getLastShares(this.afterGetShares);
     },
     afterGetShares: function(shares, status) {
       latestShares = shares;

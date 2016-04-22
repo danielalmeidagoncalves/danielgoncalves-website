@@ -23,7 +23,25 @@ def getAllShares():
             emit(doc.type, doc);
         }
     }'''
+
     results = db.query(map_fun)
+    docs = []
+    for body in results:
+        docs.append(body.value)
+    log.info(simplejson.dumps(docs))
+    return simplejson.dumps(docs)
+
+
+@shares.route('/last_shares')
+def getLastShares():
+    db = CouchdbUtils().get_db()
+    map_fun = '''function(doc) {
+        if(doc.type=="post"){
+            emit(doc.type, doc);
+        }
+    }'''
+    # I promise I will not post more than 8 times per day
+    results = db.query(map_fun, limit=8)
     docs = []
     for body in results:
         docs.append(body.value)
