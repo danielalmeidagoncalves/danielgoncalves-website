@@ -3,7 +3,14 @@ define(function(require, exports, module) {
   var FollowingMenu = require("jsx!components/menu/FollowingMenu");
   var SidebarMenu = require("jsx!components/menu/SidebarMenu");
   var TopMenu = require("jsx!components/menu/TopMenu");
+  var ShareRootItem = require("jsx!components/content/ShareRootItem");
+
+  var SharesActions = require("sharesactions");
+  var sharesList = [];
   module.exports = React.createClass({
+    getInitialState: function() {
+      return {wrapperStates: "umounted"};
+    },
     componentDidMount: function() {
       // fix menu when passed
       $(this.refs.header).visibility({
@@ -25,24 +32,49 @@ define(function(require, exports, module) {
         }, 1500);
       }
     },
+    componentWillMount: function() {
+        SharesActions.getAllShares(this.afterGetShares);
+    },
+    afterGetShares: function(shares, status) {
+      sharesList = shares;
+      // let change the state
+      this.setState({wrapperStates: "mounted"});
+    },
+    renderShares: function() {
+      var sharesTmpl = [];
+      for (var share in sharesList) {
+        if (sharesList.hasOwnProperty(share)) {
+          sharesTmpl.push(
+            <ShareRootItem key={sharesList[share]._rev}
+              data-author={sharesList[share].author}
+              data-title={sharesList[share].title}
+              data-resume={sharesList[share].resume}
+              data-slug={sharesList[share].slug}
+              data-createdat = {sharesList[share].created_at}
+              data-tags= {sharesList[share].tags.join(",")}>
+            </ShareRootItem>
+          );
+        }
+      }
+
+      return sharesTmpl;
+    },
     render: function() {
       return (
         <div id="app-wrapper">
-          <FollowingMenu></FollowingMenu>
-          <SidebarMenu></SidebarMenu>
+          <FollowingMenu data-goback="true"></FollowingMenu>
+          <SidebarMenu data-goback="true"></SidebarMenu>
           <div className="pusher">
             <div ref="header" className="ui content top header">
               <div className="ui inverted vertical center aligned segment">
                 <div className="ui container">
-                  <TopMenu></TopMenu>
+                  <TopMenu data-goback="true"></TopMenu>
                 </div>
               </div>
             </div>
-            <div className="ui vertical stripe segment">
+            <div className="ui vertical stripe gray segment">
               <div className="ui middle aligned stackable grid container">
-                    <div className="ui raised very padded text container segment">
-                        <img className="ui fluid image" src="https://source.unsplash.com/random" />
-                    </div>
+                    {this.renderShares()}
               </div>
             </div>
             <div className="ui inverted vertical footer segment">

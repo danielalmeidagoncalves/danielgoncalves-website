@@ -10,7 +10,13 @@ requirejs.config({
     text: "vendors/requirejs-text/text",
     semantic: "vendors/semantic/dist/semantic",
     jed: "vendors/jed/jed",
-    i18n: "i18n/translation"
+    i18n: "i18n/translation",
+    fetch: "vendors/fetch/fetch",
+    sharesactions: "actions/SharesActions",
+    contactsactions: "actions/ContactsActions",
+    contactscontroller: "controllers/ContactsController",
+    moment: "vendors/moment/moment",
+    showdown: "vendors/showdown/dist/showdown"
   },
   shim: {
 	  'semantic': {
@@ -20,5 +26,13 @@ requirejs.config({
   },
   jsx: {
     fileExtension: ".jsx"
-  }
+  },
+  config: {
+        moment: {
+            noGlobal: false
+        },
+        showdown: {
+            noGlobal: false
+        }
+    }
 });

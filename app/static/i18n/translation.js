@@ -31,7 +31,9 @@ define(function(require, exports, module) {
           "Say Hello": ["Digam Olá"],
           "Send": ["Enviar"],
           "Read More": ["Ler Mais"],
-          "Comments": ["Comentários"]
+          "Comments": ["Comentários"],
+          "More Shares": ["Mais Posts"],
+          "Wanna see more stuff?": ["Queres ver mais?"]
         }
       },
       "domain": "messages"
@@ -54,7 +56,9 @@ define(function(require, exports, module) {
           "Say Hello": ["Say Hello"],
           "Send": ["Send"],
           "Read More": ["Read More"],
-          "Comments": ["Comments"]
+          "Comments": ["Comments"],
+          "More Shares": ["More Shares"],
+          "Wanna see more stuff?": ["Wanna see more stuff?"]
         }
       },
       "domain": "messages"

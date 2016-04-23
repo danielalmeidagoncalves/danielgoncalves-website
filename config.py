@@ -6,11 +6,11 @@ import os
 BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 
 # Define the database - we are working with
-# SQLite for this example
 DATABASE_CONNECT_OPTIONS = {}
-COUCHDB_SERVER = "http:localhost:5984"
+COUCHDB_SERVER = "http://localhost:5984/"
 COUCHDB_DATABASE = "danielgoncalves"
-
+COUCHDB_USER = "root"
+COUCHDB_PASSWORD = "benfica1904"
 # Application threads. A common general assumption is
 # using 2 per available processor cores - to handle
 # incoming requests using one and performing background
@@ -26,3 +26,5 @@ CSRF_SESSION_KEY = "secret"
 
 # Secret key for signing cookies
 SECRET_KEY = "secret"
+
+SERVER_NAME = "localhost"
