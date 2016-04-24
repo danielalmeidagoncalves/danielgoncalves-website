@@ -26,7 +26,7 @@ define(function(require, exports, module) {
               data-title={latestShares[share].title}
               data-resume={latestShares[share].resume}
               data-slug={latestShares[share].slug}
-              data-createdat = {latestShares[share].created_at}
+              data-createdat={latestShares[share].created_at}
               data-tags= {latestShares[share].tags.join(",")}>
             </Share>
           );

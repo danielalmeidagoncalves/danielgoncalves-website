@@ -99,7 +99,7 @@ body {
   }
 }
 
-#contacts .list .devicons{
+#contacts .list .devicons, #acknowledgements .list .devicons{
   font-size: 24px;
 }
 

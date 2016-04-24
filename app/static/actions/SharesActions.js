@@ -34,7 +34,20 @@ define(function(require, exports, module) {
         // somenone maked coco
         afterCall(ex,"error");
       });
-
+    },
+    getShareBySlug: function(slug,afterCall){
+      fetch('/post/'+slug)
+      .then(function(response) {
+        // go on with the data
+        return response.json();
+      }).then(function(json) {
+        // get all the nice things
+        // so lets call the thing and say everything is right
+        afterCall(json,"success");
+      }).catch(function(ex) {
+        // somenone maked coco
+        afterCall(ex,"error");
+      });
     }
   };
 

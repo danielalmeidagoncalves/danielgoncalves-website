@@ -4,6 +4,7 @@ define(function(require, exports, module) {
   var SidebarMenu = require("jsx!components/menu/SidebarMenu");
   var TopMenu = require("jsx!components/menu/TopMenu");
   var ShareRootItem = require("jsx!components/content/ShareRootItem");
+  var Footer = require("jsx!components/footer/FooterAck");
 
   var SharesActions = require("sharesactions");
   var sharesList = [];
@@ -33,7 +34,7 @@ define(function(require, exports, module) {
       }
     },
     componentWillMount: function() {
-        SharesActions.getAllShares(this.afterGetShares);
+      SharesActions.getAllShares(this.afterGetShares);
     },
     afterGetShares: function(shares, status) {
       sharesList = shares;
@@ -45,14 +46,7 @@ define(function(require, exports, module) {
       for (var share in sharesList) {
         if (sharesList.hasOwnProperty(share)) {
           sharesTmpl.push(
-            <ShareRootItem key={sharesList[share]._rev}
-              data-author={sharesList[share].author}
-              data-title={sharesList[share].title}
-              data-resume={sharesList[share].resume}
-              data-slug={sharesList[share].slug}
-              data-createdat = {sharesList[share].created_at}
-              data-tags= {sharesList[share].tags.join(",")}>
-            </ShareRootItem>
+            <ShareRootItem key={sharesList[share]._rev} data-author={sharesList[share].author} data-title={sharesList[share].title} data-resume={sharesList[share].resume} data-slug={sharesList[share].slug} data-createdat={sharesList[share].created_at} data-tags={sharesList[share].tags.join(",")}></ShareRootItem>
           );
         }
       }
@@ -74,11 +68,11 @@ define(function(require, exports, module) {
             </div>
             <div className="ui vertical stripe gray segment">
               <div className="ui middle aligned stackable grid container">
-                    {this.renderShares()}
+                {this.renderShares()}
               </div>
             </div>
             <div className="ui inverted vertical footer segment">
-              FOOTER
+              <Footer></Footer>
             </div>
           </div>
         </div>

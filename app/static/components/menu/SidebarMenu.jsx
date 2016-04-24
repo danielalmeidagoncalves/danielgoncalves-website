@@ -36,7 +36,7 @@ define(function(require, exports, module) {
         <div className="ui vertical inverted sidebar menu">
           <a className="ui item image label" href="/" style={this.goBackActive(this.props['data-goback'])}>
             <i className="arrow circle outline left icon"></i>
-            {i18n.gettext("Go Back")}
+            {i18n.gettext("Go Home")}
           </a>
           <a className="active item" href="#unsplash" style={this.goBackOthersInactive(this.props['data-goback'])}>
             {i18n.gettext("Home")}

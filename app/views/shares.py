@@ -15,6 +15,12 @@ def getPosts():
     return render_template('shares.html')
 
 
+@shares.route('/post/<slug>')
+@nocache
+def getPostBySlug(slug):
+    return render_template('share.html')
+
+
 @shares.route('/shares')
 def getAllShares():
     db = CouchdbUtils().get_db()
@@ -42,6 +48,22 @@ def getLastShares():
     }'''
     # I promise I will not post more than 8 times per day
     results = db.query(map_fun, limit=8)
+    docs = []
+    for body in results:
+        docs.append(body.value)
+    log.info(simplejson.dumps(docs))
+    return simplejson.dumps(docs)
+
+
+@shares.route('/post/<slug>/content')
+def getContentShareBySlug(slug):
+    db = CouchdbUtils().get_db()
+    map_fun = '''function(doc) {
+        if(doc.slug=="'+slug+'"){
+            emit(doc.type, doc);
+        }
+    }'''
+    results = db.query(map_fun, limit=1)
     docs = []
     for body in results:
         docs.append(body.value)

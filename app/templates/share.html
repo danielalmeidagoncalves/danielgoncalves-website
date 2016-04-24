@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Demo</title>
+  <link rel="stylesheet" type="text/css" class="ui" href="{{ url_for("static", filename="vendors/semantic/dist/semantic.min.css") }}">
+  <link rel="stylesheet" type="text/css" class="ui" href="{{ url_for("static", filename="styles/global.css") }}">
+  <link href="{{ url_for("static", filename="vendors/devicons/css/devicons.min.css") }}" rel="stylesheet">
+  <link rel="icon" href="{{ url_for("static", filename="imgs/favicon.png") }}">
+</head>
+<body>
+  <section id="share"></section>
+<script src="{{ url_for("static", filename="vendors/requirejs/require.js") }}"></script>
+<script src="{{ url_for("static", filename="config.js") }}"></script>
+<script src="{{ url_for("static", filename="bootstraps/share.js") }}"></script>
+</body>
+</html>
