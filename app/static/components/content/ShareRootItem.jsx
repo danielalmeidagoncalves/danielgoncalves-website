@@ -15,7 +15,7 @@ define(function(require, exports, module) {
     },
     parseUnsplashTopic: function(tags) {
       if (tags.length > 0) {
-        return "https://source.unsplash.com/" + tags.split(",")[0];
+        return "https://source.unsplash.com/category/" + tags.split(",")[0];
       }
 
       return "https://source.unsplash.com/random";

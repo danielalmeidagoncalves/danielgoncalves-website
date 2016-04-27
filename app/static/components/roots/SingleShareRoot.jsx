@@ -34,7 +34,7 @@ define(function(require, exports, module) {
       }
     },
     componentWillMount: function() {
-        SharesActions.getAllShares(this.afterGetShares);
+      //SharesActions.getAllShares(this.afterGetShares);
     },
     afterGetShares: function(shares, status) {
       sharesList = shares;
@@ -46,14 +46,7 @@ define(function(require, exports, module) {
       for (var share in sharesList) {
         if (sharesList.hasOwnProperty(share)) {
           sharesTmpl.push(
-            <ShareRootItem key={sharesList[share]._rev}
-              data-author={sharesList[share].author}
-              data-title={sharesList[share].title}
-              data-resume={sharesList[share].resume}
-              data-slug={sharesList[share].slug}
-              data-createdat = {sharesList[share].created_at}
-              data-tags= {sharesList[share].tags.join(",")}>
-            </ShareRootItem>
+            <ShareRootItem key={sharesList[share]._rev} data-author={sharesList[share].author} data-title={sharesList[share].title} data-resume={sharesList[share].resume} data-slug={sharesList[share].slug} data-createdat={sharesList[share].created_at} data-tags={sharesList[share].tags.join(",")}></ShareRootItem>
           );
         }
       }
@@ -73,13 +66,48 @@ define(function(require, exports, module) {
                 </div>
               </div>
             </div>
+
+            <div className="ui middle aligned stackable container">
+              <a className="ui large circular gray image label">
+              <img className="ui right spaced avatar image" src="/static/imgs/logo_post.png" />
+              DGoncalves
+              <div className="detail">2016-01-03</div>
+            </a>
+            </div>
+
+            <div id="unsplash" ref="unsplashImage" className="ui center aligned basic segment">
+              <img className="" src="https://source.unsplash.com/category/technology"/>
+            </div>
+
+            <div className="ui center huge header aligned basic segment">
+              Huge Header
+            </div>
+
+            <div className="ui center sub header aligned basic segment">
+              Huge Header
+            </div>
+
             <div className="ui vertical stripe gray segment">
               <div className="ui middle aligned stackable grid container">
-                    {this.renderShares()}
+                Share Single
+              </div>
+              <div className="ui middle aligned stackable grid container">
+                <div className="ui label">
+                  Fun
+                </div>
+                <div className="ui label">
+                  Happy
+                </div>
+                <div className="ui label">
+                  Smart
+                </div>
+                <div className="ui label">
+                  Witty
+                </div>
               </div>
             </div>
             <div className="ui inverted vertical footer segment">
-                <Footer></Footer>
+              <Footer></Footer>
             </div>
           </div>
         </div>
