@@ -125,8 +125,8 @@ define(function(require, exports, module) {
             </div>
 
             <div className="ui middle aligned stackable container">
-              <a className="ui large circular gray image label">
-              <img className="ui right spaced avatar image" src="/static/imgs/logo_post.png" />
+              <a className="ui gray image label">
+              <img className="ui avatar image" src="/static/imgs/logo_post.png" />
               {this.getProperty("author")}
               <div className="detail">{this.parseCreatedAt(this.getProperty("createdat"))}</div>
             </a>

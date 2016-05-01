@@ -24,7 +24,6 @@ def getPostBySlug(slug):
             emit(doc.type, doc);
         }
     }'''
-    log.info(map_fun)
     results = db.query(map_fun)
     docs = []
     for body in results:
@@ -43,12 +42,10 @@ def getAllShares():
             emit(doc.type, doc);
         }
     }'''
-
     results = db.query(map_fun)
     docs = []
     for body in results:
         docs.append(body.value)
-    log.info(simplejson.dumps(docs))
     return simplejson.dumps(docs)
 
 
@@ -66,7 +63,6 @@ def getLastShares():
     docs = []
     for body in results:
         docs.append(body.value)
-    log.info(simplejson.dumps(docs))
     return simplejson.dumps(docs)
 
 
@@ -83,5 +79,4 @@ def getContentShareBySlug(slug):
     docs = []
     for body in results:
         docs.append(body.value)
-    log.info(simplejson.dumps(docs))
     return simplejson.dumps(docs)

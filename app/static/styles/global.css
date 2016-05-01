@@ -116,3 +116,7 @@ body {
   font-size: 16px;
   margin-right: 0px;
 }
+
+.ui.clickable.header{
+  cursor:pointer;
+}

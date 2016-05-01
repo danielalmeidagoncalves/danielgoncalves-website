@@ -31,7 +31,6 @@ define(function(require, exports, module) {
       return "/post/" + slug;
     },
     handleClick: function(){
-      debugger;
       window.location = this.parsePostUrl(this.props["data-slug"]);
     },
     displayName: "Share",
@@ -74,9 +73,6 @@ define(function(require, exports, module) {
             </div>
             <div className="extra content">
               <span className="left floated like">
-                <i className="comments icon">
-                </i>
-                {i18n.gettext("Comments")}
               </span>
               <div className="right floated author">
                 <img

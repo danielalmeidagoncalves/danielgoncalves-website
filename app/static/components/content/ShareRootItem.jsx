@@ -11,7 +11,7 @@ define(function(require, exports, module) {
       return moment(createdAt, "DD-MM-YYYY").fromNow();
     },
     parseTags: function(tags) {
-        return tags.replace(",", " ");
+        return tags.replace(/,/g, " ");
     },
     parseUnsplashTopic: function(tags) {
       if (tags.length > 0) {
@@ -28,12 +28,15 @@ define(function(require, exports, module) {
     parsePostUrl: function(slug) {
       return "/post/" + slug;
     },
+    handleClick: function(){
+      window.location = this.parsePostUrl(this.props["data-slug"]);
+    },
     displayName: "ShareRootItem",
     render: function() {
       return (
         <div className="ui raised very padded text container white segment">
           <img className="ui fluid image" src={this.parseUnsplashTopic(this.props['data-tags'])}/>
-          <h1 className="ui header">
+          <h1 className="ui clickable header" onClick={this.handleClick}>
             {this.props["data-title"]}
             <div className="sub header" data-action-url={this.parsePostUrl(this.props["data-slug"])}>
               <p dangerouslySetInnerHTML={this.parseBodyMarkdown(this.props["data-resume"])}>
@@ -41,7 +44,7 @@ define(function(require, exports, module) {
             </div>
           </h1>
           <div className="ui bottom attached basic label">
-            <i className="comment icon"></i>
+            <i className="tags icon"></i>
             {this.parseTags(this.props["data-tags"])}
           </div>
         </div>
