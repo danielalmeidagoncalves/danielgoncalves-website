@@ -21,6 +21,8 @@ define(function(require, exports, module) {
               <span data-variation="tiny" data-content="RequireJS" data-position="top center" className="devicons devicons-requirejs"></span>
               <span data-variation="tiny" data-content="SAAS" data-position="top center" className="devicons devicons-sass"></span>
               <span data-variation="tiny" data-content="Semantic-UI" data-position="top center" className="devicons devicons-sublime"></span>
+              <span data-variation="tiny" data-content="Flask" data-position="top center" className="devicons devicons-flask"><img src="/static/imgs/flask.png" /></span>
+              <span data-variation="tiny" data-content="React" data-position="top center" className="devicons devicons-react"><img src="/static/imgs/reactjs.png" /></span>
               <span data-variation="tiny" data-content="JQuery" data-position="top center" className="devicons devicons-jquery"></span>
               <span data-variation="tiny" data-content="Atom" data-position="top center" className="devicons devicons-atom"></span>
               <span data-variation="tiny" data-content="Bower" data-position="top center" className="devicons devicons-bower"></span>
