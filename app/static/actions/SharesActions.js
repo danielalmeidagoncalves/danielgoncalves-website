@@ -37,7 +37,7 @@ define(function(require, exports, module) {
 
     },
     getShareBySlug: function(slug, afterCall) {
-      fetch('/post/' + slug)
+      fetch('/post/'+slug+'/content')
         .then(function(response) {
           // go on with the data
           return response.json();

@@ -35,6 +35,7 @@ def getPostBySlug(slug):
 
 
 @shares.route('/shares')
+@nocache
 def getAllShares():
     db = CouchdbUtils().get_db()
     map_fun = '''function(doc) {
@@ -52,6 +53,7 @@ def getAllShares():
 
 
 @shares.route('/last_shares')
+@nocache
 def getLastShares():
     db = CouchdbUtils().get_db()
     map_fun = '''function(doc) {
@@ -69,6 +71,7 @@ def getLastShares():
 
 
 @shares.route('/post/<slug>/content')
+@nocache
 def getContentShareBySlug(slug):
     db = CouchdbUtils().get_db()
     map_fun = '''function(doc) {

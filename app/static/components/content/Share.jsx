@@ -13,7 +13,7 @@ define(function(require, exports, module) {
       return moment(createdAt, "DD-MM-YYYY").fromNow();
     },
     parseTags: function(tags) {
-      return tags.replace(",", " ");
+      return tags.replace(/,/g, " ");
     },
     parseUnsplashTopic: function(tags) {
       if (tags.length > 0) {
@@ -30,6 +30,10 @@ define(function(require, exports, module) {
     parsePostUrl: function(slug){
       return "/post/" + slug;
     },
+    handleClick: function(){
+      debugger;
+      window.location = this.parsePostUrl(this.props["data-slug"]);
+    },
     displayName: "Share",
     render: function() {
       return (
@@ -42,6 +46,7 @@ define(function(require, exports, module) {
                     <div
                       className="ui inverted button"
                       data-action-url={this.parsePostUrl(this.props["data-slug"])}
+                      onClick={this.handleClick}
                       >
                       {i18n.gettext("Read More")}
                     </div>
