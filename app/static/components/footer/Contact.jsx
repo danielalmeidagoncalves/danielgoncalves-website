@@ -83,7 +83,7 @@ define(function(require, exports, module) {
                   <div className="ui info message">
                     <i className="close icon" ref="close"></i>
                     <div className="header">
-                      {i18n.gettext("No need to find wally to contact me :) just send a message, but before prove me that you are a human by hitting 3 times my face befor submit")}
+                      {i18n.gettext("No need to find wally to contact me :) just send a message, but before prove me that you are a human by hitting 3 times my face before submit")}
                     </div>
                   </div>
                 </div>

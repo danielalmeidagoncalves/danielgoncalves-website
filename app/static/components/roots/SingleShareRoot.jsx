@@ -137,12 +137,12 @@ define(function(require, exports, module) {
             </div>
 
             <div className="ui center huge header aligned basic segment">
-              <div dangerouslySetInnerHTML={this.parseMarkdown(this.getProperty("title"))}>
+              <div className="ui post title" dangerouslySetInnerHTML={this.parseMarkdown(this.getProperty("title"))}>
               </div>
             </div>
 
             <div className="ui center sub header aligned basic segment">
-              <div dangerouslySetInnerHTML={this.parseMarkdown(this.getProperty("resume"))}>
+              <div className="ui post resume" dangerouslySetInnerHTML={this.parseMarkdown(this.getProperty("resume"))}>
               </div>
             </div>
 
@@ -151,7 +151,7 @@ define(function(require, exports, module) {
                 <div dangerouslySetInnerHTML={this.parseMarkdown(this.getProperty("body"))}>
                 </div>
               </div>
-              <div className="ui middle aligned stackable grid container">
+              <div className="ui middle aligned stackable grid tags container">
                   {this.renderTags()}
               </div>
             </div>

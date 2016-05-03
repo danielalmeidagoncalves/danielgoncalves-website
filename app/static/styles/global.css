@@ -120,3 +120,16 @@ body {
 .ui.clickable.header{
   cursor:pointer;
 }
+
+.ui.post.title{
+  font-size: 1.4em;
+}
+
+.ui.post.resume{
+  font-size: 1.4em;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.ui.tags.container{
+  margin-top:2rem;
+}
