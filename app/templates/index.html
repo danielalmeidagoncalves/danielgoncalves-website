@@ -12,7 +12,9 @@
   <link rel="icon" href="{{ url_for("static", filename="imgs/favicon.png") }}">
 </head>
 <body>
-  <section id="hello"></section>
+  <section id="hello">
+  <div class="ui large active loader"></div>
+  </section>
 <script src="{{ url_for("static", filename="vendors/requirejs/require.js") }}"></script>
 <script src="{{ url_for("static", filename="config.js") }}"></script>
 <script src="{{ url_for("static", filename="bootstraps/hello.js") }}"></script>

@@ -23,7 +23,6 @@ define(function(require, exports, module) {
       window.removeEventListener('resize', this.handleResize);
     },
     buildImageSource: function(apiUrl, width, height) {
-      console.log(apiUrl + "/" + width + "x" + height);
       return apiUrl + "/" + width + "x" + height;
     },
     animate: function() {
