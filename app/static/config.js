@@ -16,7 +16,8 @@ requirejs.config({
     contactsactions: "actions/ContactsActions",
     contactscontroller: "controllers/ContactsController",
     moment: "vendors/moment/moment",
-    showdown: "vendors/showdown/dist/showdown"
+    showdown: "vendors/showdown/dist/showdown",
+    semanticuigrowl:"vendors/semantic/dist/components/jquery.semantic-ui-growl"
   },
   shim: {
 	  'semantic': {

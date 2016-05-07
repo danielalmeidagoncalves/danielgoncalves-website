@@ -33,7 +33,8 @@ define(function(require, exports, module) {
           "Read More": ["Ler Mais"],
           "Comments": ["Comentários"],
           "More Shares": ["Mais Posts"],
-          "Wanna see more stuff?": ["Queres ver mais?"]
+          "Wanna see more stuff?": ["Queres ver mais?"],
+          "Howdy! My name is Daniel and this is my site.":["Olá! O meu nome é Daniel e este é o meu site."]
         }
       },
       "domain": "messages"
@@ -58,7 +59,8 @@ define(function(require, exports, module) {
           "Read More": ["Read More"],
           "Comments": ["Comments"],
           "More Shares": ["More Shares"],
-          "Wanna see more stuff?": ["Wanna see more stuff?"]
+          "Wanna see more stuff?": ["Wanna see more stuff?"],
+          "Howdy! My name is Daniel and this is my site.":["Howdy! My name is Daniel and this is my site."]
         }
       },
       "domain": "messages"

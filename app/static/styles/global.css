@@ -205,3 +205,16 @@ body {
     opacity: 0;
   }
 }
+
+.ui.inverted.vertical.center.aligned.segment{
+  background: linear-gradient(160deg, #290B36 0%, #043453 100%);
+  opacity: 0.9;
+}
+
+.top.header{
+  background: transparent;
+}
+
+.ui.card>.content>.description{
+  font-size:12px;
+}

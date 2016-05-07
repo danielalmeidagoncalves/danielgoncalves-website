@@ -1,5 +1,7 @@
 define(function(require, exports, module) {
   var React = require("react");
+  var growl = require("semanticuigrowl");
+  var i18n = require("i18n");
   module.exports = React.createClass({
     getInitialState: function() {
       return {hit: 0};
@@ -17,7 +19,9 @@ define(function(require, exports, module) {
         });
         if (component.state.hit >= 3) {
           ContactsController.setCaptchaSatisfied(true);
-          $(me[0]).dimmer('show');
+          $.semanticUiGrowl(i18n.gettext("Congrats!! you now can send a message :)"), {
+                header: "Yeah, that's it"
+          });
         }
       });
     },
@@ -29,7 +33,7 @@ define(function(require, exports, module) {
               <div className="center">
                 <h2 className="ui icon header">
                   <i className="mail icon"></i>
-                  <div className="sub header">  Congrats!! you now can send a message :)</div>
+                  <div className="sub header" ref="message"> {i18n.gettext("Congrats!! you now can send a message :)")}</div>
                 </h2>
               </div>
             </div>
