@@ -10,7 +10,7 @@ DATABASE_CONNECT_OPTIONS = {}
 COUCHDB_SERVER = "http://localhost:5984/"
 COUCHDB_DATABASE = "danielgoncalves"
 COUCHDB_USER = "root"
-COUCHDB_PASSWORD = "couchdbpassword2016"
+COUCHDB_PASSWORD = "ahahahahahahaha"
 # Application threads. A common general assumption is
 # using 2 per available processor cores - to handle
 # incoming requests using one and performing background
