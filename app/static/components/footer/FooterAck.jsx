@@ -32,8 +32,7 @@ define(function(require, exports, module) {
               <span data-variation="tiny" data-content="Travis" data-position="top center" className="devicons devicons-travis"></span>
           </div>
           <div>
-            <a href="https://mixpanel.com/f/partner" rel="nofollow"><img src="//cdn.mxpnl.com/site_media/images/partner/badge_blue.png" alt="Mobile Analytics" /></a>
-          </div>
+            <a href="//www.hotjar.com/?utm_source=badge"><img src="//static.hotjar.com/b/hotjar-badge-light.png" alt="Hotjar - Unlimited insights from your web and mobile sites" /></a>          </div>
           </div>
         </div>
       );
