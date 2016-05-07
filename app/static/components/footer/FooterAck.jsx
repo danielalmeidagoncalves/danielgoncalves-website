@@ -30,7 +30,10 @@ define(function(require, exports, module) {
               <span data-variation="tiny" data-content="Markdown" data-position="top center" className="devicons devicons-markdown"></span>
               <span data-variation="tiny" data-content="Nginx" data-position="top center" className="devicons devicons-nginx"></span>
               <span data-variation="tiny" data-content="Travis" data-position="top center" className="devicons devicons-travis"></span>
-            </div>
+          </div>
+          <div>
+            <a href="https://mixpanel.com/f/partner" rel="nofollow"><img src="//cdn.mxpnl.com/site_media/images/partner/badge_blue.png" alt="Mobile Analytics" /></a>
+          </div>
           </div>
         </div>
       );
