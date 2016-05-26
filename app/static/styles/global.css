@@ -96,13 +96,13 @@ body {
     font-size: 1.5em;
   }
 }
-#contacts .list .devicons, #acknowledgements .list .devicons {
+#contacts .devicons, #acknowledgements .devicons {
   font-size: 24px;
 }
-#contacts .list .favorite {
+#contacts .favorite {
   vertical-align: top;
 }
-#contacts .list .text {
+#contacts .text {
   vertical-align: top;
 }
 .people.shape h2 {
@@ -217,4 +217,8 @@ body {
 
 .ui.card>.content>.description{
   font-size:12px;
+}
+
+.hotjar-badge{
+  float: right;
 }
