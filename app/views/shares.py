@@ -42,7 +42,7 @@ def getAllShares():
             emit(doc.type, doc);
         }
     }'''
-    results = db.query(map_fun)
+    results = db.query(map_fun, descending=True)
     docs = []
     for body in results:
         docs.append(body.value)
@@ -59,7 +59,7 @@ def getLastShares():
         }
     }'''
     # I promise I will not post more than 8 times per day
-    results = db.query(map_fun, limit=8)
+    results = db.query(map_fun, limit=8, descending=True)
     docs = []
     for body in results:
         docs.append(body.value)
