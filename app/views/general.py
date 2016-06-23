@@ -1,14 +1,27 @@
 import simplejson
-from flask import Flask, Blueprint, render_template
+from flask import Flask, Blueprint, render_template, g, request, jsonify
+import couchdb
 from app.utils.nocache import nocache
-import flaskext.couchdb
+from app.utils.CouchdbUtils import CouchdbUtils
+from zenlog import log
 general = Blueprint('general', __name__)
 
 
 @general.route('/')
 @nocache
 def index():
-    return render_template('index.html')
+    db = CouchdbUtils().get_db()
+    map_fun = '''function(doc) {
+        if(doc.type=="post"){
+            emit(doc.type, doc);
+        }
+    }'''
+    results = db.query(map_fun)
+    docs = []
+    for body in results:
+        docs.append(body.value)
+    log.info("length:"+len(docs).__str__())
+    return render_template('index.html', documents=docs)
 
 
 @general.route('/google3a491a2ba06afd19.html')

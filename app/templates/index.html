@@ -30,5 +30,10 @@
 <script src="{{ url_for("static", filename="vendors/requirejs/require.js") }}"></script>
 <script src="{{ url_for("static", filename="config.js") }}"></script>
 <script src="{{ url_for("static", filename="bootstraps/hello.js") }}"></script>
+<div class="yes-goolge-bot-this-is-for-you">
+{% for item in documents %}
+  <a href="post/{{ item.slug }}">{{item.title}}</a>
+ {% endfor %}
+ </div>
 </body>
 </html>
