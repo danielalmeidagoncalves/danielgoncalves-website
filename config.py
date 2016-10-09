@@ -8,9 +8,9 @@ BASE_DIR = os.path.abspath(os.path.dirname(__file__))
 # Define the database - we are working with
 DATABASE_CONNECT_OPTIONS = {}
 COUCHDB_SERVER = "http://localhost:5984/"
-COUCHDB_DATABASE = "danielgoncalves"
-COUCHDB_USER = "root"
-COUCHDB_PASSWORD = "couchdbpassword2016"
+COUCHDB_DATABASE = "database"
+COUCHDB_USER = "user"
+COUCHDB_PASSWORD = "password"
 # Application threads. A common general assumption is
 # using 2 per available processor cores - to handle
 # incoming requests using one and performing background
