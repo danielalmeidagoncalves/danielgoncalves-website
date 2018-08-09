@@ -1,2 +1,6 @@
 *.pyc
 instance/
+app/static/vendors/
+node_modules/
+.idea/*
+config.py
