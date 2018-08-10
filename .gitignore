@@ -1,6 +1,8 @@
 *.pyc
 instance/
-app/static/vendors/
+app/static/vendors/*
 node_modules/
-.idea/*
+*.xml
 config.py
+semantic.json
+*.log
