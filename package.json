@@ -8,7 +8,7 @@
     "@bower_components/jquery": "git://github.com/jquery/jquery-dist.git#~2.2.0",
     "@bower_components/jsx-requirejs-plugin": "git://github.com/philix/jsx-requirejs-plugin.git#~0.6.2",
     "@bower_components/moment": "git://github.com/moment/moment.git#~2.12.0",
-    "@bower_components/react": "git://github.com/facebook/react-bower.git#~0.13.3",
+    "@bower_components/react": "git://github.com/facebook/react-bower.git#~0.14.0",
     "@bower_components/requirejs": "git://github.com/jrburke/requirejs-bower.git#~2.1.22",
     "@bower_components/requirejs-text": "git://github.com/requirejs/text.git#~2.0.13",
     "@bower_components/semantic": "git://github.com/Semantic-Org/Semantic-UI.git#~2.1.8",
